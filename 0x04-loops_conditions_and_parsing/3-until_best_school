@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#Using until loop to print
+# Usage of until command
 
-i=1
+counter=1
 
-until[ $i -gt 10 ]
+until [ $counter -gt 10 ]
 do
     echo "Best School"
-    (( i++ ))
+    (( counter++ ))
 done
