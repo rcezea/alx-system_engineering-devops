@@ -2,7 +2,7 @@
 # Printing using while loop
 
 i=1
-while [ "$i" -le 10 ];
+while [ "$i" -le 10 ]
 do 
     echo $i
     case $i in
@@ -16,5 +16,5 @@ do
             echo "bad luck from Italy"
             ;;
     esac
-    (( i++ ));
+    (( i++ ))
 done
