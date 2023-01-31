@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# A script that list process
+# A script that show bash pid
+# shellcheck disable=SC2009
 
-ps -feux
+ps faux | grep "bash"
+
