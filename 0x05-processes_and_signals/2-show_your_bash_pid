@@ -2,4 +2,3 @@
 # A script that list process
 
 ps -feux
-
