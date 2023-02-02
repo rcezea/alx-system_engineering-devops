@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to print all active ipv4 IPs
+ifconfig | grep -oP 'inet addr:\K[0-9.]*'
+
