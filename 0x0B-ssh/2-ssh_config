@@ -22,7 +22,7 @@ Host *
 #   ForwardAgent no
 #   ForwardX11 no
 #   ForwardX11Trusted yes
-#   PasswordAuthentication yes
+#   PasswordAuthentication no
 #   HostbasedAuthentication no
 #   GSSAPIAuthentication no
 #   GSSAPIDelegateCredentials no
@@ -35,6 +35,7 @@ Host *
 #   StrictHostKeyChecking ask
 #   IdentityFile ~/.ssh/id_rsa
 #   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/school
 #   IdentityFile ~/.ssh/id_ecdsa
 #   IdentityFile ~/.ssh/id_ed25519
 #   Port 22
