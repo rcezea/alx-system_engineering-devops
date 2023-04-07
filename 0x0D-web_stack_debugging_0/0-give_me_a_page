@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# run apache on docker
+
+server apache2 start
