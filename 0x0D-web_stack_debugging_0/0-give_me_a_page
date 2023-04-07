@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # run apache on docker
 
-echo "ServerName localhost" >> /etc/apache2.conf
-sudo server apache2 start
+service apache2 start
