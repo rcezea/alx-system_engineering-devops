@@ -6,9 +6,14 @@ IP=$2
 USER=$3
 SSH_KEY=$4
 
-if [ $ARGV -lt 3 ]
+if [ $ARGV -lt 3 ];
 then
     echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
-    exit
-fi
-scp -o StrictHostKeyChecking=no -i "$SSH_KEY" "$PATH" "$USER@$IP:~/"
+    exit;
+fi;
+if [ $ARGV -ge 4 ];
+then
+    scp -o StrictHostKeyChecking=no -i "$SSH_KEY" "$PATH" "$USER@$IP:~/"
+else
+    scp -o StrictHostKeyChecking=no -i "$PATH" "$USER@$IP:~/"
+fi;
