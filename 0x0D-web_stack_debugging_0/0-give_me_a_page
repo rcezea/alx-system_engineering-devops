@@ -2,4 +2,4 @@
 # run apache on docker
 
 echo "ServerName localhost" >> /etc/apache2.conf
-server apache2 start
+sudo server apache2 start
