@@ -2,6 +2,9 @@
 # This script configures an Nginx HTTP response header to containa custom header
 sudo apt-get update
 sudo apt-get install -y nginx
+service nginx start
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo sed -i '/http {/a \
 	add_header X-Served-By $hostname;' /etc/nginx/nginx.conf
-sudo service nginx restart
+service nginx restart
