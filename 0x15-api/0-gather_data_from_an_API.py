@@ -3,8 +3,8 @@
 Using REST API, return info about employee todo list progress
 """
 
-import requests
 from sys import argv
+import requests
 
 if __name__ == '__main__':
     """
