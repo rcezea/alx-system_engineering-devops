@@ -3,10 +3,10 @@
 Using REST API, return info about employee todo list progress
 """
 
+import requests
+from sys import argv
 
 if __name__ == '__main__':
-    import requests
-    from sys import argv
 
     url = f"https://jsonplaceholder.typicode.com/users/{argv[1]}"
     name = requests.get(url).json().get('name')
