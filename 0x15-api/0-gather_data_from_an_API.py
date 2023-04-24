@@ -8,11 +8,11 @@ import sys
 
 
 if __name__ == '__main__':
-    url = f"https://jsonplaceholder.typicode.com/users/{argv[1]}"
+    url = f"https://jsonplaceholder.typicode.com/users/{sys.argv[1]}"
 
     name = requests.get(url).json().get('name')
 
-    url = f"https://jsonplaceholder.typicode.com/todos?userId={argv[1]}"
+    url = f"https://jsonplaceholder.typicode.com/todos?userId={sys.argv[1]}"
 
     total = requests.get(url).json()
     done = 0
