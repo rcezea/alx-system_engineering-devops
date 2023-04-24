@@ -24,10 +24,10 @@ if __name__ == '__main__':
 
     total = total.json()
 
-    with open("USER_ID.csv", "w") as csvfile:
+    with open("{}.csv".format(sys.argv[1]), "w") as csvfile:
+        write = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for i in total:
             status = i.get('completed')
             title = i.get('title')
             data = [sys.argv[1], username, status, title]
-            write = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             write.writerow(data)
