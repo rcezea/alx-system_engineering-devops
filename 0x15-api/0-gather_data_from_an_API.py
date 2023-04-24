@@ -3,14 +3,11 @@
 Using REST API, return info about employee todo list progress
 """
 
-from sys import argv
 import requests
+import sys
+
 
 if __name__ == '__main__':
-    """
-    Using REST API, return info about employee todo list progress
-    """
-
     url = f"https://jsonplaceholder.typicode.com/users/{argv[1]}"
 
     name = requests.get(url).json().get('name')
@@ -29,4 +26,4 @@ if __name__ == '__main__':
 
     total_done = [i.get('title') for i in total if i.get('completed')]
     for i in total_done:
-        print(i)
+        print("\t ", i)
