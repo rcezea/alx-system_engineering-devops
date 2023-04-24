@@ -23,4 +23,4 @@ if __name__ == '__main__':
 
     for i in total:
         if i.get('completed'):
-            print("\t{}".format(i.get('title')))
+            print("\t {}".format(i.get('title')))
