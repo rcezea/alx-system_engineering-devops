@@ -2,19 +2,21 @@
 """
 Using REST API, return info about employee todo list progress
 """
-
+import sys
+import requests
 
 def main():
-    import sys
-    import requests
+    """
+    Using REST API, return info about employee todo list progress
+    """
 
     url = f"https://jsonplaceholder.typicode.com/users/{sys.argv[1]}"
 
-    name = requests.get(url).json().get('name')
+    name = requests.get(url, timeout=10).json().get('name')
 
     url = f"https://jsonplaceholder.typicode.com/todos?userId={sys.argv[1]}"
 
-    total = requests.get(url).json()
+    total = requests.get(url, timeout=10).json()
     done = 0
 
     for i in total:
