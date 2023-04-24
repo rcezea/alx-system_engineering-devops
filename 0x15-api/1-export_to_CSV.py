@@ -23,12 +23,11 @@ if __name__ == '__main__':
     total = requests.get(url2, timeout=10)
 
     total = total.json()
-    done = 0
 
-    with open("USER_ID.csv", "w") as csvfile:
+    with open("USER_ID.csv", "a") as csvfile:
         for i in total:
             status = i.get('completed')
             title = i.get('title')
             data = [sys.argv[1], username, status, title]
-            write = csv.writer(csvfile)
+            write = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             write.writerow(data)
