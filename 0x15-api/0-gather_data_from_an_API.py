@@ -27,6 +27,6 @@ if __name__ == '__main__':
     print("Employee {} is done with tasks({}/{}):"
           .format(name, done, len(total)))
 
-    for i in total:
-        if i.get('completed'):
-            print("\t\b\b\b{}".format(i.get('title')))
+    total_done = [i.get('title') for i in total if i.get('completed')]
+    for i in total_done:
+        print(i)
