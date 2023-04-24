@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     total = total.json()
 
-    with open("USER_ID.csv", "a") as csvfile:
+    with open("USER_ID.csv", "w") as csvfile:
         for i in total:
             status = i.get('completed')
             title = i.get('title')
