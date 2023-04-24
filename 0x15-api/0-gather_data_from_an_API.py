@@ -7,9 +7,6 @@ import requests
 
 
 if __name__ == '__main__':
-    """
-    Using REST API, return info about employee todo list progress
-    """
 
     url = f"https://jsonplaceholder.typicode.com/users/{sys.argv[1]}"
 
