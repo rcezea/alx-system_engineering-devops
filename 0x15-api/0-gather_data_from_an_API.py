@@ -8,7 +8,7 @@ import requests
 
 if __name__ == '__main__':
 
-    url = f"https://jsonplaceholder.typicode.com/users/{sys.argv[1]}"
+    url = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
 
     name = requests.get(url, timeout=10)
 
@@ -16,7 +16,8 @@ if __name__ == '__main__':
 
     name = name.get('name')
 
-    url2 = f"https://jsonplaceholder.typicode.com/todos?userId={sys.argv[1]}"
+    url2 = "https://jsonplaceholder.typicode.com/todos?userId={}".format(
+            sys.argv[1])
 
     total = requests.get(url2, timeout=10)
 
@@ -27,8 +28,9 @@ if __name__ == '__main__':
         if i.get('completed'):
             done += 1
 
-    print(f"Employee {name} is done with tasks({done}/{len(total)}):")
+    print("Employee {} is done with tasks({}/{}):".
+          format(name, done, len(total)))
 
     for i in total:
         if i.get('completed'):
-            print(f"\t {i.get('title')}")
+            print("\t {}".format(i.get('title')))
