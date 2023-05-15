@@ -4,5 +4,8 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    
+    """ Gets number of subscribers in a subreddit """
+    r = requests.get("https://www.reddit.com/r/{}/about.json".format(subreddit), headers={'User-Agent': 'Ezea Richard'}).json()
+    # if r.status_code != 200:
+    #     return 0
+    return (r.get("data", {}).get("subscribers", 0))
