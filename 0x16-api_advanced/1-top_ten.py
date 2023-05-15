@@ -13,4 +13,4 @@ def top_ten(subreddit):
     params = {'limit': 10}
     r = req.get(url=link, headers=headers, params=params).json()
     for i in (r.get("data", {}).get("children", 0)):
-        print(i.get("data", {}).get("title", "None"))
+        print(i.get("data", {}).get("title", 0))
