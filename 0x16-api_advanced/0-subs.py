@@ -7,9 +7,9 @@ def number_of_subscribers(subreddit):
     """
     Gets number of subscribers in a subreddit
     """
-    if subreddit is None:
-        return 0
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {'User-Agent': 'Ezea Richard'}
     r = requests.get(url, headers=headers)
+    if r.status_code != 200:
+        return 0
     return (r.json()['data']['subscribers'])
